@@ -42,21 +42,21 @@ export class Visual implements IVisual {
     private circle: Selection<SVGElement>;
     private textValue: Selection<SVGElement>;
     private textLabel: Selection<SVGElement>;
-
+    
     constructor(options: VisualConstructorOptions) {
         this.svg = d3.select(options.element)
-            .append("svg")
-            .classed("circleCard", true);
+            .append('svg')
+            .classed('circleCard', true);
         this.container = this.svg.append("g")
-            .classed("container", true);
+            .classed('container', true);
         this.circle = this.container.append("circle")
-            .classed('circle', true)
+            .classed('circle', true);
         this.textValue = this.container.append("text")
-            .classed('textValue', true)
+            .classed("textValue", true);
         this.textLabel = this.container.append("text")
-            .classed('textLabel', true);
+            .classed("textLabel", true);
     }
-
+    
     public update(options: VisualUpdateOptions) {
         let width: number = options.viewport.width;
         let height: number = options.viewport.height;
